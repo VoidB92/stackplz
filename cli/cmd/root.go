@@ -661,6 +661,7 @@ func init() {
     rootCmd.PersistentFlags().StringVar(&gconfig.ParseFile, "parse", "", "parse perf data as json or readable format")
     // 常规ELF库hook设定
     rootCmd.PersistentFlags().StringVarP(&gconfig.Library, "lib", "l", "libc.so", "lib name or lib full path, default is libc.so")
+    rootCmd.PersistentFlags().StringArrayVarP(&gconfig.LibraryDirs, "libdirs", "", []string{}, "lib dirs, library directory path or apk path")
     rootCmd.PersistentFlags().StringArrayVarP(&gconfig.HookPoint, "point", "w", []string{}, "hook point config, e.g. strstr+0x0[str,str] write[int,buf:128,int]")
     rootCmd.PersistentFlags().StringVar(&gconfig.RegName, "reg", "", "get the offset of reg")
     rootCmd.PersistentFlags().BoolVarP(&gconfig.DumpRet, "dumpret", "", false, "dump ret offset for symbol")
